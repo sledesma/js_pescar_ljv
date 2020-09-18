@@ -1,0 +1,6 @@
+1) Comprender el problema
+2) Diseñar la solución / Estrategia
+3) Implementar la estrategia
+    a. teorica  -diagrama/plan/modelo
+    b. practica -codificacion
+4) Evaluación

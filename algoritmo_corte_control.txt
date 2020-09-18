@@ -1,0 +1,68 @@
+ALGORITMO DE CORTE DE CONTROL:
+
+PROBLEMA: 
+-------------------------------------------------------------------------------------
+Mostrar información de forma jerárquica en un conjunto de items ordenado por un valor clave. Implementar un 'Group By' en un lenguaje algorítmico.
+
+
+SOLUCION: 
+-------------------------------------------------------------------------------------
+COMPARAR CON EL ANTERIOR
+
+
+POR EJEMPLO:
+dia: 1                      diaAnterior = 1
+venta: $1500                total = 1500
+dia: 1
+venta: $2500                total = 4000
+dia: 1
+venta: $1000                total = 5000        
+----------------- CORTE Total: $5000
+dia: 2                      diaAnterior = 2     => Mostrar "Dia 1 / Total 5000"
+venta: $400                 total = 400
+dia: 2                      diaAnterior = 2
+venta: $500                 total = 900
+dia: 2                      diaAnterior  = 2
+venta: $300                 total = 1200
+--------------- CORTE Total: $1200
+dia 3:                      diaAnterior = 3    => Mostrar "Dia 2 / Total 1200"
+venta: $1000                total = 1000
+--------------- CORTE Total: $1000
+                            => Mostrar "Dia 3 / Total 100"
+
+Dia 1:
+Total: $5000
+Dia 2:
+Total: $1200
+Dia 3:
+Total: $1000
+
+PASOS IMPORTANTES:
+
+1) Pedir dia
+2) Pedir venta
+
+3) Si no hay diaAnterior
+3.1)    diaAnterior = dia
+3.2)    total = venta
+
+4) Si dia = diaAnterior
+4.1)    Total = Total + venta
+
+5) Si dia es distinto de diaAnterior
+5.1)    Mostrar diaAnterior y el total
+5.2)    diaAnterior = dia
+5.3)    total = venta
+
+6) Si no hay más registros
+6.1) Mostrar diaAnterior y el total
+
+
+
+IMPLEMENTACION:
+-------------------------------------------------------------------------------------
+
+1) DIAGRAMA / PSEUDOCODIGO / PSeInt
+
+
+2) CODIFICACION
