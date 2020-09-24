@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .error {
+            border: 0;
+            outline: none;
+            border: 2px solid red;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <button id="btnSaludar">Clickeame</button>
+
+    <input id="texto" />
+
+    <script>
+
+        // 1. Seleccionar el elemento en el cual quiero escuchar el evento
+        var elemento = document.getElementById('btnSaludar'); 
+        // 2. Definir el evento a escuchar
+        // Click
+        // 3. Agregar el callback necesario
+        elemento.onclick = function() {
+            alert('Has hecho click en el boton');
+        }
+
+        // 1. Seleccionar el elemento en el cual quiero escuchar el evento
+        var elemento2 = document.getElementById('texto');
+        // 2. Definir el evento a escuchar
+        // Input / Change
+        // 3. Agregar el callback necesario
+        elemento2.oninput = function() {
+            var valorActual = elemento2.value;
+            if(valorActual == '') {
+                elemento2.classList.add('error');
+            } else if(elemento2.classList.contains('error')){
+                elemento2.classList.remove('error');
+            }
+        }
+    </script>
+
+
+</body>
+</html>
